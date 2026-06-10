@@ -9,10 +9,10 @@ type Item = Readonly<{
 
 const addFee = (item: Item): Item => ({ ...item, price: item.price * 1.01 })
 
-const submit = (items: Item[] = []) => 
+const submit = (items: Item[] = []) =>
   (item: Item) =>
-    isNonEmptyArray(items) 
-      ? append(item)(items) 
+    isNonEmptyArray(items)
+      ? append(item)(items)
       : [item] satisfies NonEmptyArray<Item>
 
 const ship = (items: NonEmptyArray<Item>): ReadonlyArray<Item> =>
@@ -31,3 +31,5 @@ describe('Shipping', () => {
     )
   })
 })
+
+export { Item, addFee, submit, ship, submitAndShip }

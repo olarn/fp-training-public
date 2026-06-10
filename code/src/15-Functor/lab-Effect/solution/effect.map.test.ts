@@ -4,7 +4,7 @@ import { pipe } from 'effect/Function'
 const strLength = (x: string) => x.length
 const increment = (x: number) => x + 1
 
-describe('Map with fp-ts', () => {
+describe('Map with Effect', () => {
   it('should be able to compose strLength and increment with map', () => {
     expect(
       pipe(
